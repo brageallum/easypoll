@@ -40,7 +40,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }): Promi
 	return new Response(
 		render(
 			<div className="flex flex-col justify-center items-center gap-5">
-				<h1 className="text-white text-3xl">Thanks for submitting!</h1>
+				<h1 className="text-white text-3xl">You created a poll!</h1>
 				<h2 className="text-white text-2xl">{title}</h2>
 				<div className="flex flex-row gap-5">
 					{options.map(({ name }) => (

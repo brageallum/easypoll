@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.htmx-fade-in.htmx-added {
+    opacity: 0;
+}
+.htmx-fade-in {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+}
+.htmx-fade-out.htmx-swapping {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}

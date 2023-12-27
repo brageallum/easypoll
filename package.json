@@ -1,21 +1,38 @@
 {
-  "name": "simple-poll",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/output.css --minify",
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231218.0",
-    "typescript": "^5.0.4",
-    "wrangler": "^3.0.0"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0"
-  }
+	"name": "simple-poll",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+		"build": "npm run build:css",
+		"dev": "wrangler pages dev dist",
+		"deploy": "wrangler pages deploy dist",
+		"start": "wrangler dev"
+	},
+	"devDependencies": {
+		"@cloudflare/kv-asset-handler": "^0.3.0",
+		"@cloudflare/workers-types": "^4.20231218.0",
+		"@types/cookie": "^0.6.0",
+		"@types/uuid": "^9.0.7",
+		"@typescript-eslint/eslint-plugin": "^6.16.0",
+		"@typescript-eslint/parser": "^6.16.0",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.1.2",
+		"eslint-plugin-react": "^7.33.2",
+		"prettier": "^3.1.1",
+		"prettier-plugin-tailwindcss": "^0.5.9",
+		"typescript": "^5.3.3",
+		"wrangler": "^3.22.1"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.16",
+		"cookie": "^0.6.0",
+		"esbuild": "^0.19.10",
+		"postcss": "^8.4.32",
+		"preact": "^10.19.3",
+		"preact-render-to-string": "^6.3.1",
+		"tailwindcss": "^3.4.0",
+		"uuid": "^9.0.1"
+	}
 }

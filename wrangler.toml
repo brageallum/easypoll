@@ -1,9 +1,13 @@
-name = "simple-poll"
-main = "src/index.ts"
+name = "simplepoll"
+main = "src/index.tsx"
 compatibility_date = "2023-12-18"
 
 [build]
 command = "npm run build"
+watch_dir = ["src", "functions"]
+
+[site]
+bucket = "./dist"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
@@ -13,9 +17,9 @@ command = "npm run build"
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/runtime-apis/kv
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "SIMPLE_POLL_KV"
+id = "496af9339e664143bb5c8f5430afd386"
 
 # Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
 # Docs: https://developers.cloudflare.com/r2/api/workers/workers-api-usage/
